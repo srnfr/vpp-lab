@@ -18,7 +18,7 @@
 version: '2.1'
 services:
   anx:
-    build: anx
+    image: docker.io/reytans/anx
     ports: ["9269:8080"]
 
   #@telegraf:
