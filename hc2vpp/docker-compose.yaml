@@ -21,8 +21,8 @@ services:
     build: anx
     ports: ["9269:8080"]
 
-  telegraf:
-    build: telegraf
+  #@telegraf:
+  ##  build: telegraf
 
   influxdb:
     image: influxdb:alpine
