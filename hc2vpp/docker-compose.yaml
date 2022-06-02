@@ -47,7 +47,7 @@ services:
     build: ansible
 
   node1:
-    build: .
+    image: docker.io/reytans/hc2vpp_node:latest
     ports: ["8301:2831", "4431:8445"]
     privileged: true
     sysctls:
@@ -68,7 +68,7 @@ services:
 
 
   node2:
-    build: .
+    image: docker.io/reytans/hc2vpp_node:latest
     ports: ["8302:2831", "4432:8445"]
     privileged: true
     sysctls:
@@ -88,7 +88,7 @@ services:
         priority: 100
 
   node3:
-    build: .
+    image: docker.io/reytans/hc2vpp_node:latest
     ports: ["8303:2831", "4433:8445"]
     privileged: true
     sysctls:
