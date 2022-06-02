@@ -42,10 +42,10 @@ services:
   #    - KAPACITOR_INFLUXDB_0_URLS_0=http://influxdb:8086
   #  ports: ["9093:9092"]
 
-  ansible:
-    depends_on: ["node1", "node2", "node3"]
-    #build: ansible
-    image: docker.io/reytans/vpp_ansible
+  #ansible:
+  #  depends_on: ["node1", "node2", "node3"]
+  #  #build: ansible
+  #  image: docker.io/reytans/vpp_ansible
 
   node1:
     image: docker.io/reytans/hc2vpp_node:latest
