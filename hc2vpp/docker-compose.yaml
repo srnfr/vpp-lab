@@ -24,27 +24,28 @@ services:
   #@telegraf:
   ##  build: telegraf
 
-  influxdb:
-    image: influxdb:alpine
-    environment:
-      - INFLUXDB_DB=telemetry
-      - INFLUXDB_ADMIN_PASSWORD=admin
+  #influxdb:
+  #  image: influxdb:alpine
+  #  environment:
+  #    - INFLUXDB_DB=telemetry
+  #    - INFLUXDB_ADMIN_PASSWORD=admin
 
-  chronograf:
-    image: chronograf:alpine
-    command: --influxdb-url=http://influxdb:8086 --kapacitor-url=http://kapacitor:9092
-    ports: [ "8888:8888" ]
+  #chronograf:
+  #  image: chronograf:alpine
+  #  command: --influxdb-url=http://influxdb:8086 --kapacitor-url=http://kapacitor:9092
+  #  ports: [ "8888:8888" ]
 
-  kapacitor:
-    image: kapacitor:alpine
-    environment:
-      - KAPACITOR_HOSTNAME=kapacitor
-      - KAPACITOR_INFLUXDB_0_URLS_0=http://influxdb:8086
-    ports: ["9093:9092"]
+  #kapacitor:
+  #  image: kapacitor:alpine
+  #  environment:
+  #    - KAPACITOR_HOSTNAME=kapacitor
+  #    - KAPACITOR_INFLUXDB_0_URLS_0=http://influxdb:8086
+  #  ports: ["9093:9092"]
 
   ansible:
     depends_on: ["node1", "node2", "node3"]
-    build: ansible
+    #build: ansible
+    image: docker.io/reytans/vpp_ansible
 
   node1:
     image: docker.io/reytans/hc2vpp_node:latest
